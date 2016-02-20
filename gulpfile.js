@@ -34,3 +34,8 @@ gulp.task('js', function() {
         .pipe(gulp.dest(pathJs.destino));
 });
 
+gulp.task('default',function(){
+    gulp.start(['jade','js']);
+    return;
+});
+

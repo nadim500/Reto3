@@ -1,3 +1,3 @@
-var persona = require('./persona.js');
+var persona = require('../collections/persona.js');
 
 persona('Duivan');
