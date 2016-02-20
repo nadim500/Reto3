@@ -1,8 +1,6 @@
 var gulp = require('gulp');
 var jade = require('gulp-jade');
-var uglify = require('gulp-uglify');
 var source = require('vinyl-source-stream');
-var buffer = require('vinyl-buffer');
 var browserify = require('browserify');
 var gutil = require('gulp-util');
 
