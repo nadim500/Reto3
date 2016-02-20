@@ -1,0 +1,1 @@
+Dentro de la carpeta "Build", en la carpeta "development" puede borrar la carpeta "js", tambien en la carpeta "views" puede borrar todo su contenido. Si usted en la consola ingresa el comando "gulp" se generara los archivos estaticos lo cual de nuevo se creara todo lo que borro.
