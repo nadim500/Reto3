@@ -4,6 +4,7 @@ var uglify = require('gulp-uglify');
 var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
 var browserify = require('browserify');
+var gutil = require('gulp-util');
 
 var pathJade = {
     origen: 'Builds/src/templates/**/*.jade',
@@ -11,6 +12,7 @@ var pathJade = {
 };
 
 var pathJs = {
+    origen: './Builds/src/js/controllers/controller.js',
     destino: 'Builds/development/js/'
 };
 
@@ -23,14 +25,12 @@ gulp.task('jade', function() {
 });
 
 gulp.task('js', function() {
-    return browserify('Builds/src/js/controllers/controller.js')
+    return browserify(pathJs.origen)
         .bundle()
-        .pipe(source(bundle.js))
-        .pipe(buffer())
-        .pipe(uglify())
+        .on('error',function(e){
+            gutil.log(e);
+        })
+        .pipe(source('bundle.js'))
         .pipe(gulp.dest(pathJs.destino));
 });
 
-//gulp.task('js', function() {
-
-//});
